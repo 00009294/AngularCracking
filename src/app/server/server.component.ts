@@ -7,9 +7,8 @@ import { NgModel } from '@angular/forms';
   styleUrl: './server.component.css'
 })
 export class ServerComponent {
-  allowNewServer = false;
-  userName = "TEst";
-  name!: string;
+  allowNewServer!: boolean;
+  userName = "";
 
   constructor(){
     setTimeout(() => {
@@ -17,7 +16,13 @@ export class ServerComponent {
     }, 2000);
   }
 
-  onUpdateUserName(event: Event){
-    this.name = (<HTMLInputElement>event.target).value;
+  setName(str: string){
+    if(str === ''){
+      return true;
+    } else return false;
   }
+  setEmpty(str: string){
+    this.userName = '';
+  }
+  
 }
