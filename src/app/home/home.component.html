@@ -1,5 +1,0 @@
-<p> All clicked : {{showOverall()}}</p>
-<button (click)="showDetails()">Display Details</button>
-<p *ngIf="isDisplayed" [ngStyle]="{}">Secret Password is {{password}}</p>
-
-<p *ngFor="let tx of showAllClickedText()" [ngStyle]="{ 'color': setColor() }" >Value: {{tx}}</p>
