@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>DataBinding</h1>
+    <input type="text" [(ngModel)] = "userName">
+    <p>
+        Value: {{userName}}
+    </p>
+    <button [disabled]="setName(userName)" 
+        (click)="setEmpty(userName)"
+        >Click me</button>
+    <hr>
+    <button (click)="getStatus()"
+        >Update Status</button>
+
+    <app-server [serverStatus] ="serverStatus"></app-server>
+    <app-server [serverStatus] ="serverStatus"></app-server>
+    <hr>
+    <app-home></app-home>
+
+</div>
