@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>DataBinding</h1>
+    <p> This is string interpolation: {{allowNewServer}}</p>
+    <div>This is property binding: 
+        <p [innerText]="allowNewServer" ></p>
+    </div>
+    <button [disabled]="!allowNewServer" >Click me</button>
+    <hr>
+    <input type="text" class="form-control" (input) = "onUpdateUserName($event)">
+    <p>{{name}}</p>
+    
+    <input type="text" class="form-control" [(ngModel)] = "userName">
+    <p>{{userName}}</p>
+</div>
