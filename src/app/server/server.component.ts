@@ -1,28 +1,23 @@
-import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
   styleUrl: './server.component.css'
 })
-export class ServerComponent {
-  allowNewServer!: boolean;
-  userName = "";
+export class ServerComponent implements OnInit{
+ @Input() serverStatus: string ='' ;
 
-  constructor(){
-    setTimeout(() => {
-      this.allowNewServer = true;
-    }, 2000);
-  }
+  constructor(){ }
 
-  setName(str: string){
-    if(str === ''){
-      return true;
-    } else return false;
-  }
-  setEmpty(str: string){
-    this.userName = '';
-  }
+  ngOnInit() { }
   
+  setColor(){
+    return this.serverStatus === 'success' ? 'green' : 'red';
+  }
+
+  getStatus(){
+    return this.serverStatus;
+  }
+
 }
