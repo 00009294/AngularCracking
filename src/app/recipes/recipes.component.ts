@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-recipes',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrl: './recipes.component.css'
 })
 export class RecipesComponent {
+
+  description!: string;
+
+  message = "";
+
+  sendDesc(): string{
+    this.description = 'New Description from parent';
+
+    return this.description;
+  }
+
+
 
 }
